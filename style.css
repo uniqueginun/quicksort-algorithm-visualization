@@ -18,3 +18,19 @@ button {
     align-items: end;
     justify-content: space-around;
 }
+
+.items {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item {
+    color: black;
+    margin: auto 1px;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: cornsilk;
+}

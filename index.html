@@ -14,7 +14,8 @@
   <body x-data="quickSortAlgorithm()" x-init="resetArrayItems()">
     <div class="container">
       <div class="controls">
-        <button x-on:click="run()">run algorithm</button>
+        <button x-on:click="run()">run quickSort algorithm</button>
+        <button x-on:click="runInsetion()">run insetionSort algorithm</button>
         <button x-on:click="resetArrayItems()">reset items</button>
       </div>
       <div class="visualizer">
@@ -22,6 +23,11 @@
           <div :style="itemStyle(item, index)"></div>
         </template>
       </div>
+      <!--div class="items">
+        <template x-for="(item, index) in items" :key="index">
+          <div class="item" x-text="item"></div>
+        </template>
+      </div-->
     </div>
   </body>
 </html>

@@ -1,8 +1,4 @@
-function swap(array, firstIndex, secondIndex) {
-  let temp = array[firstIndex];
-  array[firstIndex] = array[secondIndex];
-  array[secondIndex] = temp;
-}
+let swap = (array, x, y) => ([array[x], array[y]] = [array[y], array[x]]);
 
 let sleep = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -18,6 +14,9 @@ function quickSortAlgorithm() {
     },
     run() {
       this.quickSort(this.items, 0, this.items.length - 1);
+    },
+    runInsetion() {
+      this.insertionSort(this.items, 0, this.items.length - 1);
     },
     resetArrayItems() {
       this.items = [];
@@ -54,6 +53,22 @@ function quickSortAlgorithm() {
       swap(arr, pivotIndex, end);
       this.currentlyCompared = [pivotIndex, end];
       return pivotIndex;
+    },
+    insertionSort: async function (arr) {
+      for (let index = 1; index < arr.length; index++) {
+        let current = arr[index];
+        let j = index - 1;
+        while (j >= 0 && arr[j] > current) {
+          await sleep(1);
+          this.currentlyCompared = [j + 1];
+          swap(arr, j + 1, j);
+          j--;
+        }
+        await sleep(1);
+        this.currentlyCompared = [arr.indexOf(current)];
+        swap(arr, j + 1, arr.indexOf(current));
+      }
+      this.currentlyCompared = [];
     },
   };
 }
