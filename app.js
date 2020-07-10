@@ -5,10 +5,10 @@ let sleep = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
 function quickSortAlgorithm() {
   return {
     items: [],
-    max: 360,
+    max: 720,
     currentlyCompared: [],
     itemStyle: function (item, index) {
-      return `width: 4px; height: ${item}px; background-color: ${
+      return `width: 2px; height: ${item}px; background-color: ${
         this.currentlyCompared.includes(index) ? "red" : "#fff"
       }`;
     },
